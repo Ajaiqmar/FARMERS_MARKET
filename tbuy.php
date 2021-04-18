@@ -40,15 +40,15 @@
 
 	use Twilio\Rest\Client;
 
-	$sid = "ACa54ae04736c39d14b3d3856355612d02";
-	$token = "bf57dece7e077829833c3b1931814390";
+	$sid = "";
+	$token = "";
 	$twilio = new Client($sid, $token);
 
 	$message = $twilio->messages
-                  ->create("+919080362583", // to
+                  ->create("", // to
                            [
                                "body" => "அன்பே $sellname, $val வாங்க கோரியுள்ளது $product உங்கள் பிடியில் இருந்து. வாங்குபவரின் மின்னஞ்சல் முகவரி $buyemail மற்றும் வாங்குபவரின் தொலைபேசி எண் $buyphone.",
-                               "from" => "+15867899205"
+                               "from" => "+"
                            ]
                   );
 
