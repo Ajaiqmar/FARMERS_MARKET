@@ -10,7 +10,7 @@
 	$sellname = $_GET["name"];
 	$sellemail = $_GET["email"];
 	$product = $_GET["pro"];
-	$sellphone = "+919080362583";
+	$sellphone = "";
 	$buyemail = "";
 	$buyphone = "";
 
@@ -41,15 +41,15 @@
 
 	use Twilio\Rest\Client;
 
-	$sid = "ACa54ae04736c39d14b3d3856355612d02";
-	$token = "bf57dece7e077829833c3b1931814390";
+	$sid = "";
+	$token = "";
 	$twilio = new Client($sid, $token);
 
 	$message = $twilio->messages
                   ->create($sellphone, // to
                            [
                                "body" => "Dear $sellname, $val has requested to buy $product from your hold. Buyer's email address is $buyemail and Buyer's phone number is $buyphone.",
-                               "from" => "+15867899205"
+                               "from" => ""
                            ]
                   );
 
